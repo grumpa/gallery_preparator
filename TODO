@@ -1,0 +1,22 @@
+ gallery preparator - TODO
+---------------------------
+
+> i18n <
+
+Finish translation to English.
+Finish i18n for my language.
+Write instructions for translators.
+
+
+> program logic <
+
+The program after rotation pictures doesn't ask if rotation is o.k.
+and if you want rotate again.
+
+
+> application design <
+
+It si my first project with objects, modules and so forth in Python.
+I'll be glad if you tell me some advices how to make it well in common
+convetnions.
+

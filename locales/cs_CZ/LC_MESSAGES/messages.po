@@ -1,0 +1,23 @@
+# gr_gallery.py
+# Copyright (C) YEAR ORGANIZATION
+# Viktor Matys <v.matys@seznam.cz>, 2013.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: development\n"
+"POT-Creation-Date: 2013-05-31 18:29+CEST\n"
+"PO-Revision-Date: 2013-05-31 18:29+CEST\n"
+"Last-Translator: Viktor Matys <v.matys@seznam.cz>\n"
+"Language-Team: CZECH <v.matys@seznam.cz>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: UTF-8\n"
+"Generated-By: pygettext.py 1.5\n"
+
+
+#: ui/console.py:51
+msgid "Source directory with pictures"
+msgstr "Zdrojový adresář s obrázky"
+
+msgid "Translate this."
+msgstr "Tohle přelož."
