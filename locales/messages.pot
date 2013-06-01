@@ -1,21 +1,148 @@
-# gr_gallery.py
-# Copyright (C) YEAR ORGANIZATION
-# Viktor Matys <v.matys@seznam.cz>, 2013.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
+#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: development\n"
-"POT-Creation-Date: 2013-05-31 18:29+CEST\n"
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-06-01 21:47+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=CHARSET\n"
-"Content-Transfer-Encoding: ENCODING\n"
-"Generated-By: pygettext.py 1.5\n"
+"Content-Transfer-Encoding: 8bit\n"
 
-
-#: ui/console.py:51
-msgid "Source directory with pictures"
+#: ui/console.py:23
+msgid "Rotate pictures? [y/N]"
 msgstr ""
 
+#: ui/console.py:27
+msgid "Another gallery [Y/n]"
+msgstr ""
+
+#: ui/console.py:44
+msgid "Recapitulation"
+msgstr ""
+
+#: ui/console.py:47
+msgid "Is everyting O.K. [y/N]"
+msgstr ""
+
+#: ui/console.py:52
+msgid "Check questions again and make corrections."
+msgstr ""
+
+#: ui/console.py:60
+msgid "Source base directory with picture directory(s)"
+msgstr ""
+
+#: ui/console.py:66
+#, python-format
+msgid "Source base directory %s doesn't exists."
+msgstr ""
+
+#: ui/console.py:72
+msgid "Source subdirectory with pictures"
+msgstr ""
+
+#: ui/console.py:79
+msgid "Subdirectory doesn't exist"
+msgstr ""
+
+#: ui/console.py:85
+msgid "Destination base directory for galleries"
+msgstr ""
+
+#: ui/console.py:92
+#, python-format
+msgid "Destination base directory %s doesn't exist."
+msgstr ""
+
+#: ui/console.py:98
+msgid "Destination subdirectory for the gallery"
+msgstr ""
+
+#: ui/console.py:105
+msgid ""
+"Destination subdirectory exists already. Provide different name or delete "
+"the directory."
+msgstr ""
+
+#: ui/console.py:111
+msgid "Name for gallery (fee text)"
+msgstr ""
+
+#: ui/console.py:114
+msgid "Name is mandatory."
+msgstr ""
+
+#: ui/console.py:123
+msgid ""
+"Description (free text include html tags) - all in one line. Write \"x\" for "
+"erase existing text."
+msgstr ""
+
+#: ui/console.py:130
+msgid "Required size for picture (dimension of longer side)"
+msgstr ""
+
+#: ui/console.py:134
+msgid "Required size for thumbnail (dimension of longer side)"
+msgstr ""
+
+#: ui/console.py:140
+msgid "Source directory"
+msgstr ""
+
+#: ui/console.py:141
+msgid "Destination directory"
+msgstr ""
+
+#: ui/console.py:142
+msgid "Name for the gallery"
+msgstr ""
+
+#: ui/console.py:143
+msgid "Gallery description"
+msgstr ""
+
+#: ui/console.py:144
+msgid "Picture size"
+msgstr ""
+
+#: ui/console.py:145
+msgid "Thumbnail size"
+msgstr ""
+
+#: ui/console.py:149
+msgid "example"
+msgstr ""
+
+#: ui/console.py:153
+msgid "Rotate pictures in directory"
+msgstr ""
+
+#: ui/console.py:157
+msgid "Pictures numbers and direction of rotation"
+msgstr ""
+
+#: ui/console.py:163
+msgid "Reassurance"
+msgstr ""
+
+#: ui/console.py:165
+msgid "directory"
+msgstr ""
+
+#: ui/console.py:166
+msgid "pictures"
+msgstr ""
+
+#: ui/console.py:167
+msgid "O.K. [y/N]"
+msgstr ""

@@ -20,8 +20,7 @@ Program works from console and asks for everything.
  current status
 ----------------
 
-Program works well. Currently i18n is in process. The program asks you
-in Czech language for now. :-) Learn it. It is nice language ;)
+Program works well. Only some installator missing. 
 
 
  usage
