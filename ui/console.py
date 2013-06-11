@@ -44,7 +44,7 @@ class UI(Gallery):
             questext = _('Recapitulation')
             print("\n%s:\n" % questext)
             self.console_items_list()
-            questext = _('Is everyting O.K. [y/N]')
+            questext = _('Is everything O.K. [y/N]')
             ret = raw_input("%s ? " % questext)
             if ret.lower() == 'y':
                 ok = True
