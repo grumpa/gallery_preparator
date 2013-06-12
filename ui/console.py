@@ -147,28 +147,33 @@ class UI(Gallery):
     def console_rotate_pics(self, pdir=None):
         "Console ui wrapper for rotate_pics method."
         example = " (" + _("example") + ": 6l 12r 16-23l 14r 35u)"
-        pics = None
-        ok = False
-        while not ok:
-            questext = _('Rotate pictures in directory')
-            ret = raw_input("%s [%s]: " % (questext, pdir))
-            if ret != "":
-                pdir = ret
-            question = _("Pictures numbers and direction of rotation")
-            if pics:
-                question += " [%s]: " % pics
-            else:
-                question += example + ": "
-            pics = raw_input(question)
-            questext = _('Reassurance')
-            print("\n%s\n" % questext)
-            print(_("directory") + ": %s" % pdir)
-            print(_("pictures") + ": %s" % pics)
-            questext = _("O.K. [y/N]")
-            ret = raw_input("\n%s? " % questext)
+        repeat = True
+        while repeat:
+            pics = None
+            ok = False
+            while not ok:
+                questext = _('Rotate pictures in directory')
+                ret = raw_input("%s [%s]: " % (questext, pdir))
+                if ret != "":
+                    pdir = ret
+                question = _("Pictures numbers and direction of rotation")
+                if pics:
+                    question += " [%s]: " % pics
+                else:
+                    question += example + ": "
+                pics = raw_input(question)
+                questext = _('Reassurance')
+                print("\n%s\n" % questext)
+                print(_("directory") + ": %s" % pdir)
+                print(_("pictures") + ": %s" % pics)
+                questext = _("O.K. [y/N]")
+                ret = raw_input("\n%s? " % questext)
+                if ret.lower() == "y":
+                    ok = True
+                self.rotate_pics(pdir,pics)
+            ret = raw_input(_("Rotation finished. Is rotation O.K. [Y/n] ?") + " ")
             if ret.lower() == "y":
-                ok = True
-        self.rotate_pics(pdir,pics)
+                repeat = False
 
         
 if __name__ == "__main__":

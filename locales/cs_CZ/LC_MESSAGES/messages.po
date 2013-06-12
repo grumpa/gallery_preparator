@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gallery Preparator, Alpha\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-06-11 22:51+0100\n"
+"POT-Creation-Date: 2013-06-12 20:54+0100\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Viktor Matys <v.matys@seznam.cz>\n"
 "Language-Team: cs <v.matys@seznam.cz>\n"
@@ -118,27 +118,31 @@ msgstr "Velikost náhledu"
 msgid "example"
 msgstr "příklad"
 
-#: gallery_preparator/ui/console.py:153
+#: gallery_preparator/ui/console.py:155
 msgid "Rotate pictures in directory"
 msgstr "Otočit obrázky v adresáři"
 
-#: gallery_preparator/ui/console.py:157
+#: gallery_preparator/ui/console.py:159
 msgid "Pictures numbers and direction of rotation"
 msgstr "Čísla obrázků a směr otočení"
 
-#: gallery_preparator/ui/console.py:163
+#: gallery_preparator/ui/console.py:165
 msgid "Reassurance"
 msgstr "Ujištění"
 
-#: gallery_preparator/ui/console.py:165
+#: gallery_preparator/ui/console.py:167
 msgid "directory"
 msgstr "adresář"
 
-#: gallery_preparator/ui/console.py:166
+#: gallery_preparator/ui/console.py:168
 msgid "pictures"
 msgstr "obrázky"
 
-#: gallery_preparator/ui/console.py:167
+#: gallery_preparator/ui/console.py:169
 msgid "O.K. [y/N]"
 msgstr "V pořádku [y/N]"
+
+#: gallery_preparator/ui/console.py:174
+msgid "Rotation finished. Is rotation O.K. [Y/n] ?"
+msgstr "Otáčení dokončeno. Je vše otočeno správně [Y/n] ?"
 
