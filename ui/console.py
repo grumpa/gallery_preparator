@@ -5,18 +5,19 @@ import os.path
 import gettext
 import locale
 
-locale.setlocale(locale.LC_ALL,'')
+locale.setlocale(locale.LC_ALL, '')
 _ = gettext.gettext
 gettext.bindtextdomain('messages', 'locales')
 
 from core import Gallery
+
 
 class UI(Gallery):
     def __init__(self):
         Gallery.__init__(self)
 
     def galeries(self):
-        "Main loop for galeries"
+        """Main loop for galeries"""
         cont = True
         while cont:
             self.console_ask_gallery()
@@ -36,6 +37,7 @@ class UI(Gallery):
                 cont = False
 
     def console_ask_gallery(self):
+        """Loop for one gallery"""
         ok = False
         while not ok:
             # Acquire items from console
@@ -55,6 +57,7 @@ class UI(Gallery):
         self.convert_pictures()
 
     def console_ask_items(self):
+        """Ask parameters of source, destination, name and dimensions."""
         ok = False
         while not ok:
             basedir_src = raw_input(_("Source base directory with picture directory(s)")+" [%s]: " % self.basedir_src)
@@ -63,7 +66,7 @@ class UI(Gallery):
             if self.basedir_src[-1:] == "/":
                 self.basedir_src = self.basedir_src[:-1]
             if not os.path.isdir(self.basedir_src):
-                print(_("Source base directory %s doesn't exists.") % self.basedir_src )
+                print(_("Source base directory %s doesn't exists.") % self.basedir_src)
                 ok = False
             else:
                 ok = True
@@ -117,9 +120,9 @@ class UI(Gallery):
                 self.name = name
             ok = True
         if self.description != "":
-            nl="\n"
+            nl = "\n"
         else:
-            nl=""
+            nl = ""
         questext = _('Description (free text include html tags) - all in one line. Write "x" for erase existing text.')
         description = raw_input("%s:\n%s%s" % (questext, self.description, nl))
         if description != "":
@@ -137,6 +140,7 @@ class UI(Gallery):
             self.thm_size = int(thm_size)
 
     def console_items_list(self):
+        """List parameters of the gallery."""
         print(_("Source directory") + ": %s/%s" % (self.basedir_src, self.dir_src))
         print(_("Destination directory") + ": %s/%s" % (self.basedir_dst, self.dir_dst))
         print(_("Name for the gallery") + ": %s" % self.name)
@@ -145,7 +149,7 @@ class UI(Gallery):
         print(_("Thumbnail size") + ": %d" % self.thm_size)
 
     def console_rotate_pics(self, pdir=None):
-        "Console ui wrapper for rotate_pics method."
+        """Console ui wrapper for rotate_pics method."""
         example = " (" + _("example") + ": 6l 12r 16-23l 14r 35u)"
         repeat = True
         while repeat:
@@ -170,7 +174,7 @@ class UI(Gallery):
                 ret = raw_input("\n%s? " % questext)
                 if ret.lower() == "y":
                     ok = True
-                self.rotate_pics(pdir,pics)
+                self.rotate_pics(pdir, pics)
             ret = raw_input(_("Rotation finished. Is rotation O.K. [Y/n] ?") + " ")
             if ret.lower() == "y":
                 repeat = False
@@ -179,4 +183,3 @@ class UI(Gallery):
 if __name__ == "__main__":
     g = UI()
     g.galeries()
-
