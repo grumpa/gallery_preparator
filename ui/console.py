@@ -176,7 +176,7 @@ class UI(Gallery):
                     ok = True
                 self.rotate_pics(pdir, pics)
             ret = raw_input(_("Rotation finished. Is rotation O.K. [Y/n] ?") + " ")
-            if ret.lower() == "y":
+            if ret.lower() != "n":
                 repeat = False
 
         
