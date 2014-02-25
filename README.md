@@ -7,15 +7,17 @@ Program transforms picutres into form usable for web gallery makers.
 ------------
 
 You have directory with serveral subirectories with pictures:
+```
 /path/to/basedir/subdir1/pic1.jpg
 /path/to/basedir/subdir1/pic2.jpg
 /path/to/basedir/subdir1/pic3.jpg
 /path/to/basedir/subdir2/pic1.jpg
 /path/to/basedir/subdir2/pic2.jpg
 /path/to/basedir/subdir2/pic3.jpg
-
+```
 And you want to generate directories with converted pictures
 into required size and with subidr with thumnails:
+```
 /path/to/dstbasedir/dstdir1/thumbs/00001.jpg
 /path/to/dstbasedir/dstdir1/thumbs/00002.jpg
 /path/to/dstbasedir/dstdir1/thumbs/00003.jpg
@@ -24,6 +26,7 @@ into required size and with subidr with thumnails:
 /path/to/dstbasedir/dstdir1/00003.jpg
 /path/to/dstbasedir/dstdir1/description
 /path/t.... the same for next dir
+```
 
 File 'description' contains importrant info about gallery:
 - gallery name
@@ -39,8 +42,9 @@ Program works from Linux console and asks you for everything needed.
 
  Dependencies
 --------------
-python standar library :)
-PIL
+
+- python standar library :)
+- PIL
 
  current status
 ----------------
