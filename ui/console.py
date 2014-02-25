@@ -159,13 +159,18 @@ class UI(Gallery):
                 questext = _('Rotate pictures in directory')
                 ret = raw_input("%s [%s]: " % (questext, pdir))
                 if ret != "":
+                    if not os.path.isdir(ret):
+                        print(_("This is not a directory. Again please."))
+                        continue
                     pdir = ret
                 question = _("Pictures numbers and direction of rotation")
                 if pics:
                     question += " [%s]: " % pics
                 else:
                     question += example + ": "
-                pics = raw_input(question)
+                ret = raw_input(question)
+                if ret:
+                    pics = ret
                 questext = _('Reassurance')
                 print("\n%s\n" % questext)
                 print(_("directory") + ": %s" % pdir)
@@ -174,7 +179,7 @@ class UI(Gallery):
                 ret = raw_input("\n%s? " % questext)
                 if ret.lower() == "y":
                     ok = True
-                self.rotate_pics(pdir, pics)
+                    self.rotate_pics(pdir, pics)
             ret = raw_input(_("Rotation finished. Is rotation O.K. [Y/n] ?") + " ")
             if ret.lower() != "n":
                 repeat = False
