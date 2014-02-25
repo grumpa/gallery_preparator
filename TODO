@@ -7,12 +7,6 @@ Allow translation of [y/n].
 Write instructions for translators.
 
 
-> program logic <
-
-The program after rotation pictures doesn't ask if rotation is o.k.
-and if you want rotate again.
-
-
 > application design <
 
 It si my first project with objects, modules and so forth in Python.
