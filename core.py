@@ -1,10 +1,13 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+"""
+An executing class for gallery preparator independent on user interface.
+"""
+
 import sys
 import os
 import os.path
-import shutil
 import Image
 
 class Gallery():
@@ -32,10 +35,12 @@ class Gallery():
         "Make directories for picture gallery and thumbs"
         try:
             os.mkdir(self.basedir_dst+"/"+self.dir_dst)
-        except OSError as (err_no, err_txt):
-            print "Nejde vytvořit adresář pro obrázky (%s)" % err_txt
+        except OSError as err:
+            #TODO - impossible to use print - ui is unknown for us here
+            print "Nejde vytvořit adresář pro obrázky ({0}): {1} - {2}".format(self.dir_dst, err.errno, err.strerror)
             sys.exit(1)
-        os.mkdir(self.basedir_dst+"/"+self.dir_dst+"/thumbs")
+        else:
+            os.mkdir(self.basedir_dst+"/"+self.dir_dst+"/thumbs")
 
     def make_description_file(self):
         df = open("%s/%s/description.inc" % (self.basedir_dst, self.dir_dst),'w')
