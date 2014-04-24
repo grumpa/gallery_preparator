@@ -19,5 +19,7 @@ else:
     from ui.console import UI
 
 app = UI()
-app.galeries()
-
+try:
+    app.galeries()
+except KeyboardInterrupt:
+    print("\n\n" + _("Why so hurry? Goodbye.") + "\n")
