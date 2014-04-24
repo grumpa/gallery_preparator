@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gallery Preparator, Alpha\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-06-12 20:54+0100\n"
+"POT-Creation-Date: 2014-04-24 16:44+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Viktor Matys <v.matys@seznam.cz>\n"
 "Language-Team: cs <v.matys@seznam.cz>\n"
@@ -16,133 +16,145 @@ msgstr ""
 "X-Poedit-Basepath: /srv/web/pomucky/py_galery\n"
 "X-Poedit-SearchPath-0: gallery_preparator\n"
 
-#: gallery_preparator/ui/console.py:23
+#: gallery_preparator.py:25
+msgid "Why so hurry? Goodbye."
+msgstr "Proč ten spěch? Sbohem."
+
+#: ui/console.py:25
 msgid "Rotate pictures? [y/N]"
 msgstr "Otáčet obrázky [y/N]"
 
-#: gallery_preparator/ui/console.py:27
+#: ui/console.py:29
 msgid "Another gallery [Y/n]"
 msgstr "Další galerii [Y/n]"
 
-#: gallery_preparator/ui/console.py:44
+#: ui/console.py:47
 msgid "Recapitulation"
 msgstr "Rekapitulace"
 
-#: gallery_preparator/ui/console.py:47
+#: ui/console.py:50
 msgid "Is everything O.K. [y/N]"
 msgstr "Je všechno v pořádku [y/N]"
 
-#: gallery_preparator/ui/console.py:52
+#: ui/console.py:55
 msgid "Check questions again and make corrections."
 msgstr "Překontroluj odpovědi a proveď opravy."
 
-#: gallery_preparator/ui/console.py:60
+#: ui/console.py:64
 msgid "Source base directory with picture directory(s)"
 msgstr "Zdrojový základní adresář s podadresáři obrázků"
 
-#: gallery_preparator/ui/console.py:66
-#, python-format
-msgid "Source base directory %s doesn't exists."
-msgstr "Zdrojový základní adresář %s neexistuje."
+#: ui/console.py:68
+msgid "Source base directory doesn't exists"
+msgstr "Zdrojový základní adresář neexistuje"
 
-#: gallery_preparator/ui/console.py:72
+#: ui/console.py:75
 msgid "Source subdirectory with pictures"
 msgstr "Zdrojový podadresář s obrázky"
 
-#: gallery_preparator/ui/console.py:79
+#: ui/console.py:80
 msgid "Subdirectory doesn't exist"
 msgstr "Podadresář neexistuje"
 
-#: gallery_preparator/ui/console.py:85
+#: ui/console.py:87
 msgid "Destination base directory for galleries"
 msgstr "Cílový základní adresář pro galerie"
 
-#: gallery_preparator/ui/console.py:92
-#, python-format
-msgid "Destination base directory %s doesn't exist."
-msgstr "Cílový základní adresář  %s neexistuje."
+#: ui/console.py:92
+msgid "Destination base directory doesn't exist"
+msgstr "Cílový základní adresář neexistuje"
 
-#: gallery_preparator/ui/console.py:98
+#: ui/console.py:99
 msgid "Destination subdirectory for the gallery"
 msgstr "Cílový podadresář pro galerii"
 
-#: gallery_preparator/ui/console.py:105
-msgid "Destination subdirectory exists already. Provide different name or delete the directory."
-msgstr "Cílový podadresář již existuje. Zadej jiné jméno, nebo podadresář smaž."
+#: ui/console.py:104
+msgid ""
+"Destination subdirectory exists already. Provide different name or delete "
+"the directory."
+msgstr ""
+"Cílový podadresář již existuje. Zadej jiné jméno, nebo podadresář smaž."
 
-#: gallery_preparator/ui/console.py:111
+#: ui/console.py:111
 msgid "Name for gallery (fee text)"
 msgstr "Název pro galerii (volný text)"
 
-#: gallery_preparator/ui/console.py:114
+#: ui/console.py:114
 msgid "Name is mandatory."
 msgstr "Název je povinný."
 
-#: gallery_preparator/ui/console.py:123
-msgid "Description (free text include html tags) - all in one line. Write \"x\" for erase existing text."
-msgstr "Popis (volný text včetně html značek) - vše v jednom řádku. Chceš-li text smazat, zadej \"x\"."
+#: ui/console.py:123
+msgid ""
+"Description (free text include html tags) - all in one line. Write \"x\" for "
+"erase existing text."
+msgstr ""
+"Popis (volný text včetně html značek) - vše v jednom řádku. Chceš-li text "
+"smazat, zadej \"x\"."
 
-#: gallery_preparator/ui/console.py:130
+#: ui/console.py:130
 msgid "Required size for picture (dimension of longer side)"
 msgstr "Požadovaná velikost obrázku (rozměr delší strany)"
 
-#: gallery_preparator/ui/console.py:134
+#: ui/console.py:134
 msgid "Required size for thumbnail (dimension of longer side)"
 msgstr "Požadovaná velikost náhledu (rozměr delší strany)"
 
-#: gallery_preparator/ui/console.py:140
+#: ui/console.py:141
 msgid "Source directory"
 msgstr "Zdrojový adresář"
 
-#: gallery_preparator/ui/console.py:141
+#: ui/console.py:142
 msgid "Destination directory"
 msgstr "Cílový adresář"
 
-#: gallery_preparator/ui/console.py:142
+#: ui/console.py:143
 msgid "Name for the gallery"
 msgstr "Název galerie"
 
-#: gallery_preparator/ui/console.py:143
+#: ui/console.py:144
 msgid "Gallery description"
 msgstr "Popis galerie"
 
-#: gallery_preparator/ui/console.py:144
+#: ui/console.py:145
 msgid "Picture size"
 msgstr "Velikost obrázku"
 
-#: gallery_preparator/ui/console.py:145
+#: ui/console.py:146
 msgid "Thumbnail size"
 msgstr "Velikost náhledu"
 
-#: gallery_preparator/ui/console.py:149
+#: ui/console.py:150
 msgid "example"
 msgstr "příklad"
 
-#: gallery_preparator/ui/console.py:155
+#: ui/console.py:156
 msgid "Rotate pictures in directory"
 msgstr "Otočit obrázky v adresáři"
 
-#: gallery_preparator/ui/console.py:159
+#: ui/console.py:160
+msgid "This is not a directory. Again please."
+msgstr ""
+
+#: ui/console.py:163
 msgid "Pictures numbers and direction of rotation"
 msgstr "Čísla obrázků a směr otočení"
 
-#: gallery_preparator/ui/console.py:165
+#: ui/console.py:171
 msgid "Reassurance"
 msgstr "Ujištění"
 
-#: gallery_preparator/ui/console.py:167
+#: ui/console.py:173
 msgid "directory"
 msgstr "adresář"
 
-#: gallery_preparator/ui/console.py:168
+#: ui/console.py:174
 msgid "pictures"
 msgstr "obrázky"
 
-#: gallery_preparator/ui/console.py:169
+#: ui/console.py:175
 msgid "O.K. [y/N]"
 msgstr "V pořádku [y/N]"
 
-#: gallery_preparator/ui/console.py:174
+#: ui/console.py:180
 msgid "Rotation finished. Is rotation O.K. [Y/n] ?"
 msgstr "Otáčení dokončeno. Je vše otočeno správně [Y/n] ?"
-
