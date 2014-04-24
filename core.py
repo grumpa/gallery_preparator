@@ -8,7 +8,7 @@ An executing class for gallery preparator independent on user interface.
 import sys
 import os
 import os.path
-import Image
+from PIL import Image
 
 class Gallery():
     "Gallery source and destination."
