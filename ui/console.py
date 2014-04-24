@@ -4,6 +4,7 @@
 import os.path
 import gettext
 import locale
+import os.path
 
 locale.setlocale(locale.LC_ALL, '')
 _ = gettext.gettext
@@ -62,9 +63,7 @@ class UI(Gallery):
         while not ok:
             basedir_src = raw_input(_("Source base directory with picture directory(s)")+" [{0}]: ".format(self.basedir_src))
             if basedir_src != "":
-                self.basedir_src = basedir_src
-            if self.basedir_src[-1:] == "/":
-                self.basedir_src = self.basedir_src[:-1]
+                self.basedir_src = os.path.normpath(basedir_src)
             if not os.path.isdir(self.basedir_src):
                 print(_("Source base directory doesn't exists") + " ({0}).".format(self.basedir_src))
                 self.basedir_src = ""
@@ -76,9 +75,7 @@ class UI(Gallery):
             questext = _('Source subdirectory with pictures')
             dir_src = raw_input("{0} [{1}]: ".format(questext, self.dir_src))
             if dir_src != "":
-                self.dir_src = dir_src
-            if self.dir_src[-1:] == "/":
-                self.dir_src = self.dir_src[:-1]
+                self.dir_src = os.path.normpath(dir_src)
             if not os.path.isdir(self.basedir_src+"/"+self.dir_src):
                 print(_("Subdirectory doesn't exist") + " ({0}).".format(self.dir_src))
                 self.dir_src = ""
@@ -90,9 +87,7 @@ class UI(Gallery):
             questext = _('Destination base directory for galleries')
             basedir_dst = raw_input("{0} [{1}]: ".format(questext, self.basedir_dst))
             if basedir_dst != "":
-                self.basedir_dst = basedir_dst
-            if self.basedir_dst[-1:] == "/":
-                self.basedir_dst = self.basedir_dst[:-1]
+                self.basedir_dst = os.path.normpath(basedir_dst)
             if not os.path.isdir(self.basedir_dst):
                 print(_("Destination base directory doesn't exist") + " ({0}).".format(self.basedir_dst))
                 self.basedir_dst = ""
@@ -104,9 +99,7 @@ class UI(Gallery):
             questext = _('Destination subdirectory for the gallery')
             dir_dst = raw_input("{0} [{1}]: ".format(questext, self.dir_dst))
             if dir_dst != "":
-                self.dir_dst = dir_dst
-            if self.dir_dst[-1:] == "/":
-                self.dir_dst = self.dir_dst[:-1]
+                self.dir_dst = os.path.normpath(dir_dst)
             if os.path.exists(self.basedir_dst+"/"+self.dir_dst):
                 print(_("Destination subdirectory exists already. Provide different name or delete the directory."))
                 self.dir_dst = ""
