@@ -6,7 +6,7 @@ import os.path
 import locale
 import gettext
 
-locale.setlocale(locale.LC_ALL,'')
+locale.setlocale(locale.LC_ALL, '')
 _ = gettext.gettext
 gettext.bindtextdomain('messages', 'locales')
 
@@ -19,6 +19,7 @@ else:
     from ui.console import UI
 
 app = UI()
+
 try:
     app.galeries()
 except KeyboardInterrupt:

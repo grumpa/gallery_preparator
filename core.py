@@ -10,6 +10,7 @@ import os
 import os.path
 from PIL import Image
 
+
 class Gallery():
     "Gallery source and destination."
 

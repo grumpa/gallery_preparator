@@ -181,7 +181,7 @@ class UI(Gallery):
             if ret.lower() != "n":
                 repeat = False
 
-        
+
 if __name__ == "__main__":
     g = UI()
     g.galeries()
