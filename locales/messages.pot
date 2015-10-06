@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-04-24 16:44+0200\n"
+"POT-Creation-Date: 2015-10-06 14:28+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,142 +17,142 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: gallery_preparator.py:25
+#: gallery_preparator.py:26
 msgid "Why so hurry? Goodbye."
 msgstr ""
 
-#: ui/console.py:25
-msgid "Rotate pictures? [y/N]"
+#: ui/console.py:32
+msgid "Rotate pictures"
 msgstr ""
 
-#: ui/console.py:29
-msgid "Another gallery [Y/n]"
+#: ui/console.py:36
+msgid "Another gallery"
 msgstr ""
 
-#: ui/console.py:47
+#: ui/console.py:54
 msgid "Recapitulation"
 msgstr ""
 
-#: ui/console.py:50
-msgid "Is everything O.K. [y/N]"
+#: ui/console.py:57
+msgid "Is everything O.K."
 msgstr ""
 
-#: ui/console.py:55
+#: ui/console.py:62
 msgid "Check questions again and make corrections."
 msgstr ""
 
-#: ui/console.py:64
+#: ui/console.py:71
 msgid "Source base directory with picture directory(s)"
 msgstr ""
 
-#: ui/console.py:68
+#: ui/console.py:75
 msgid "Source base directory doesn't exists"
 msgstr ""
 
-#: ui/console.py:75
+#: ui/console.py:82
 msgid "Source subdirectory with pictures"
 msgstr ""
 
-#: ui/console.py:80
+#: ui/console.py:87
 msgid "Subdirectory doesn't exist"
 msgstr ""
 
-#: ui/console.py:87
+#: ui/console.py:94
 msgid "Destination base directory for galleries"
 msgstr ""
 
-#: ui/console.py:92
+#: ui/console.py:99
 msgid "Destination base directory doesn't exist"
 msgstr ""
 
-#: ui/console.py:99
+#: ui/console.py:106
 msgid "Destination subdirectory for the gallery"
 msgstr ""
 
-#: ui/console.py:104
+#: ui/console.py:111
 msgid ""
 "Destination subdirectory exists already. Provide different name or delete "
 "the directory."
 msgstr ""
 
-#: ui/console.py:111
+#: ui/console.py:118
 msgid "Name for gallery (fee text)"
 msgstr ""
 
-#: ui/console.py:114
+#: ui/console.py:121
 msgid "Name is mandatory."
 msgstr ""
 
-#: ui/console.py:123
+#: ui/console.py:130
 msgid ""
 "Description (free text include html tags) - all in one line. Write \"x\" for "
 "erase existing text."
 msgstr ""
 
-#: ui/console.py:130
+#: ui/console.py:137
 msgid "Required size for picture (dimension of longer side)"
 msgstr ""
 
-#: ui/console.py:134
+#: ui/console.py:141
 msgid "Required size for thumbnail (dimension of longer side)"
 msgstr ""
 
-#: ui/console.py:141
+#: ui/console.py:148
 msgid "Source directory"
 msgstr ""
 
-#: ui/console.py:142
+#: ui/console.py:149
 msgid "Destination directory"
 msgstr ""
 
-#: ui/console.py:143
+#: ui/console.py:150
 msgid "Name for the gallery"
 msgstr ""
 
-#: ui/console.py:144
+#: ui/console.py:151
 msgid "Gallery description"
 msgstr ""
 
-#: ui/console.py:145
+#: ui/console.py:152
 msgid "Picture size"
 msgstr ""
 
-#: ui/console.py:146
+#: ui/console.py:153
 msgid "Thumbnail size"
 msgstr ""
 
-#: ui/console.py:150
+#: ui/console.py:157
 msgid "example"
 msgstr ""
 
-#: ui/console.py:156
+#: ui/console.py:163
 msgid "Rotate pictures in directory"
 msgstr ""
 
-#: ui/console.py:160
+#: ui/console.py:167
 msgid "This is not a directory. Again please."
 msgstr ""
 
-#: ui/console.py:163
+#: ui/console.py:170
 msgid "Pictures numbers and direction of rotation"
 msgstr ""
 
-#: ui/console.py:171
+#: ui/console.py:178
 msgid "Reassurance"
 msgstr ""
 
-#: ui/console.py:173
+#: ui/console.py:180
 msgid "directory"
 msgstr ""
 
-#: ui/console.py:174
+#: ui/console.py:181
 msgid "pictures"
 msgstr ""
 
-#: ui/console.py:175
-msgid "O.K. [y/N]"
+#: ui/console.py:182
+msgid "O.K."
 msgstr ""
 
-#: ui/console.py:180
-msgid "Rotation finished. Is rotation O.K. [Y/n] ?"
+#: ui/console.py:187
+msgid "Rotation finished. Is rotation O.K."
 msgstr ""

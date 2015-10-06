@@ -9,6 +9,13 @@ import os.path
 locale.setlocale(locale.LC_ALL, '')
 _ = gettext.gettext
 gettext.bindtextdomain('messages', 'locales')
+# constants for local yes/no
+LOC_Y = locale.nl_langinfo(locale.YESEXPR)[2].lower()
+LOC_N = locale.nl_langinfo(locale.NOEXPR)[2].lower()
+# strings for local question [Y/n], [y/N]
+YN_Y = ' [{0}/{1}]? '.format(LOC_Y.upper(), LOC_N)
+YN_N = ' [{0}/{1}]? '.format(LOC_Y, LOC_N.upper())
+
 
 from core import Gallery
 
@@ -22,13 +29,13 @@ class UI(Gallery):
         cont = True
         while cont:
             self.console_ask_gallery()
-            questext = _('Rotate pictures? [y/N]')
-            ret = raw_input("\n{0} ? ".format(questext))
-            if ret.lower() == "y":
+            questext = _('Rotate pictures') + YN_N
+            ret = raw_input(questext)
+            if ret.lower() == LOC_Y:
                 self.console_rotate_pics(pdir="{0}/{1}".format(self.basedir_dst, self.dir_dst))
-            questext = _('Another gallery [Y/n]')
-            ret = raw_input("\n{0} ? ".format(questext))
-            if ret.lower() in ("", "y"):
+            questext = _('Another gallery') + YN_Y
+            ret = raw_input(questext)
+            if ret.lower() != LOC_N:
                 self.dir_src = ''
                 self.dir_dst = ''
                 self.name = ''
@@ -47,9 +54,9 @@ class UI(Gallery):
             questext = _('Recapitulation')
             print("\n{0}:\n".format(questext))
             self.console_items_list()
-            questext = _('Is everything O.K. [y/N]')
-            ret = raw_input("{0} ? ".format(questext))
-            if ret.lower() == 'y':
+            questext = _('Is everything O.K.') + YN_N
+            ret = raw_input(questext)
+            if ret.lower() == LOC_Y:
                 ok = True
             else:
                 print(_('Check questions again and make corrections.'))
@@ -172,13 +179,13 @@ class UI(Gallery):
                 print("\n{0}\n".format(questext))
                 print(_("directory") + ": {0}".format(pdir))
                 print(_("pictures") + ": {0}".format(pics))
-                questext = _("O.K. [y/N]")
-                ret = raw_input("\n{0}? ".format(questext))
-                if ret.lower() == "y":
+                questext = _("O.K.") + YN_N
+                ret = raw_input(questext)
+                if ret.lower() == LOC_Y:
                     ok = True
                     self.rotate_pics(pdir, pics)
-            ret = raw_input(_("Rotation finished. Is rotation O.K. [Y/n] ?") + " ")
-            if ret.lower() != "n":
+            ret = raw_input(_("Rotation finished. Is rotation O.K.") + YN_Y)
+            if ret.lower() != LOC_N:
                 repeat = False
 
 
