@@ -1,7 +1,7 @@
  gallery preparator
 ====================
 
-Program transforms picutres into form usable for web gallery makers.
+Program transforms picture folder into form usable for web gallery makers.
 
  An Example
 ------------
