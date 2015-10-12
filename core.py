@@ -14,7 +14,16 @@ from PIL import Image
 class Gallery():
     "Gallery source and destination."
 
-    def __init__(self, basedir_src="", dir_src="", basedir_dst="", dir_dst="", name="", description="", pic_size=1600, thm_size=220):
+    def __init__(self,
+                 basedir_src="",
+                 dir_src="",
+                 basedir_dst="",
+                 dir_dst="",
+                 name="",
+                 description="",
+                 pic_size=1600,
+                 thm_size=220,
+                 num_from=1):
         """
         Set initial values for a gallery.
         dir_src - source directory with original pictures
@@ -31,6 +40,7 @@ class Gallery():
         self.description = description
         self.pic_size = int(pic_size)
         self.thm_size = int(thm_size)
+        self.num_from = int(num_from)
 
     def make_directories(self):
         "Make directories for picture gallery and thumbs"
@@ -48,14 +58,14 @@ class Gallery():
         df.write("<?php\n")
         df.write("$gallery_name = \"%s\";\n" % self.name)
         df.write("$gallery_description = \"%s\";\n" % self.description)
-        df.write("$gallery_pic = \"00001.jpg\";\n")
+        df.write("$gallery_pic = \"{0:0>5d}.jpg\";\n".format(self.num_from))
         df.write("$pics[] = \"\";\n")
         df.write("?>\n")
         df.close()
 
     def convert_pictures(self):
         "Reads pictures from source directory and makes required ones into destination."
-        number = 1
+        number = self.num_from
         for item in os.listdir("%s/%s" % (self.basedir_src, self.dir_src)):
             try:
                 im = Image.open("%s/%s/%s" % (self.basedir_src, self.dir_src, item))
