@@ -40,6 +40,7 @@ class UI(Gallery):
                 self.dir_dst = ''
                 self.name = ''
                 self.description = ''
+                self.num_from = 1
                 cont = True
             else:
                 cont = False
@@ -142,6 +143,13 @@ class UI(Gallery):
         thm_size = raw_input("{0} [{1}]: ".format(questext, self.thm_size))
         if thm_size != "":
             self.thm_size = int(thm_size)
+        num_from = raw_input(_("Number picures from") + " [{0}] ".format(self.num_from))
+        try:
+            num_from = int(num_from)
+        except ValueError:
+            num_from = self.num_from
+        if num_from < 99900:
+            self.num_from = num_from
 
     def console_items_list(self):
         """List parameters of the gallery."""
@@ -151,6 +159,7 @@ class UI(Gallery):
         print(_("Gallery description") + ": {0}".format(self.description))
         print(_("Picture size") + ": {0}".format(self.pic_size))
         print(_("Thumbnail size") + ": {0}".format(self.thm_size))
+        print(_("Number picures from") + ": {0}".format(self.num_from))
 
     def console_rotate_pics(self, pdir=None):
         """Console ui wrapper for rotate_pics method."""

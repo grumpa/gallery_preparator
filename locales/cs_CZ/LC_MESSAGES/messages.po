@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gallery Preparator, Alpha\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-10-06 14:28+0200\n"
+"POT-Creation-Date: 2015-10-12 16:01+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Viktor Matys <v.matys@seznam.cz>\n"
 "Language-Team: cs <v.matys@seznam.cz>\n"
@@ -28,62 +28,62 @@ msgstr "Otáčet obrázky"
 msgid "Another gallery"
 msgstr "Další galerii"
 
-#: ui/console.py:54
+#: ui/console.py:55
 msgid "Recapitulation"
 msgstr "Rekapitulace"
 
-#: ui/console.py:57
+#: ui/console.py:58
 msgid "Is everything O.K."
 msgstr "Je všechno v pořádku"
 
-#: ui/console.py:62
+#: ui/console.py:63
 msgid "Check questions again and make corrections."
 msgstr "Překontroluj odpovědi a proveď opravy."
 
-#: ui/console.py:71
+#: ui/console.py:72
 msgid "Source base directory with picture directory(s)"
 msgstr "Zdrojový základní adresář s podadresáři obrázků"
 
-#: ui/console.py:75
+#: ui/console.py:76
 msgid "Source base directory doesn't exists"
 msgstr "Zdrojový základní adresář neexistuje"
 
-#: ui/console.py:82
+#: ui/console.py:83
 msgid "Source subdirectory with pictures"
 msgstr "Zdrojový podadresář s obrázky"
 
-#: ui/console.py:87
+#: ui/console.py:88
 msgid "Subdirectory doesn't exist"
 msgstr "Podadresář neexistuje"
 
-#: ui/console.py:94
+#: ui/console.py:95
 msgid "Destination base directory for galleries"
 msgstr "Cílový základní adresář pro galerie"
 
-#: ui/console.py:99
+#: ui/console.py:100
 msgid "Destination base directory doesn't exist"
 msgstr "Cílový základní adresář neexistuje"
 
-#: ui/console.py:106
+#: ui/console.py:107
 msgid "Destination subdirectory for the gallery"
 msgstr "Cílový podadresář pro galerii"
 
-#: ui/console.py:111
+#: ui/console.py:112
 msgid ""
 "Destination subdirectory exists already. Provide different name or delete "
 "the directory."
 msgstr ""
 "Cílový podadresář již existuje. Zadej jiné jméno, nebo podadresář smaž."
 
-#: ui/console.py:118
+#: ui/console.py:119
 msgid "Name for gallery (fee text)"
 msgstr "Název pro galerii (volný text)"
 
-#: ui/console.py:121
+#: ui/console.py:122
 msgid "Name is mandatory."
 msgstr "Název je povinný."
 
-#: ui/console.py:130
+#: ui/console.py:131
 msgid ""
 "Description (free text include html tags) - all in one line. Write \"x\" for "
 "erase existing text."
@@ -91,71 +91,74 @@ msgstr ""
 "Popis (volný text včetně html značek) - vše v jednom řádku. Chceš-li text "
 "smazat, zadej \"x\"."
 
-#: ui/console.py:137
+#: ui/console.py:138
 msgid "Required size for picture (dimension of longer side)"
 msgstr "Požadovaná velikost obrázku (rozměr delší strany)"
 
-#: ui/console.py:141
+#: ui/console.py:142
 msgid "Required size for thumbnail (dimension of longer side)"
 msgstr "Požadovaná velikost náhledu (rozměr delší strany)"
 
-#: ui/console.py:148
+#: ui/console.py:146 ui/console.py:162
+msgid "Number picures from"
+msgstr "Číslovat obrázky od"
+
+#: ui/console.py:156
 msgid "Source directory"
 msgstr "Zdrojový adresář"
 
-#: ui/console.py:149
+#: ui/console.py:157
 msgid "Destination directory"
 msgstr "Cílový adresář"
 
-#: ui/console.py:150
+#: ui/console.py:158
 msgid "Name for the gallery"
 msgstr "Název galerie"
 
-#: ui/console.py:151
+#: ui/console.py:159
 msgid "Gallery description"
 msgstr "Popis galerie"
 
-#: ui/console.py:152
+#: ui/console.py:160
 msgid "Picture size"
 msgstr "Velikost obrázku"
 
-#: ui/console.py:153
+#: ui/console.py:161
 msgid "Thumbnail size"
 msgstr "Velikost náhledu"
 
-#: ui/console.py:157
+#: ui/console.py:166
 msgid "example"
 msgstr "příklad"
 
-#: ui/console.py:163
+#: ui/console.py:172
 msgid "Rotate pictures in directory"
 msgstr "Otočit obrázky v adresáři"
 
-#: ui/console.py:167
+#: ui/console.py:176
 msgid "This is not a directory. Again please."
 msgstr "Toto není adresář. Znovu, prosím."
 
-#: ui/console.py:170
+#: ui/console.py:179
 msgid "Pictures numbers and direction of rotation"
 msgstr "Čísla obrázků a směr otočení"
 
-#: ui/console.py:178
+#: ui/console.py:187
 msgid "Reassurance"
 msgstr "Ujištění"
 
-#: ui/console.py:180
+#: ui/console.py:189
 msgid "directory"
 msgstr "adresář"
 
-#: ui/console.py:181
+#: ui/console.py:190
 msgid "pictures"
 msgstr "obrázky"
 
-#: ui/console.py:182
+#: ui/console.py:191
 msgid "O.K."
 msgstr "O.K."
 
-#: ui/console.py:187
+#: ui/console.py:196
 msgid "Rotation finished. Is rotation O.K."
 msgstr "Otáčení dokončeno. Je vše otočeno správně"
-
