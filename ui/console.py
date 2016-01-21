@@ -30,11 +30,11 @@ class UI(Gallery):
         while cont:
             self.console_ask_gallery()
             questext = _('Rotate pictures') + YN_N
-            ret = raw_input(questext)
+            ret = input(questext)
             if ret.lower() == LOC_Y:
                 self.console_rotate_pics(pdir="{0}/{1}".format(self.basedir_dst, self.dir_dst))
             questext = _('Another gallery') + YN_Y
-            ret = raw_input(questext)
+            ret = input(questext)
             if ret.lower() != LOC_N:
                 self.dir_src = ''
                 self.dir_dst = ''
@@ -53,14 +53,14 @@ class UI(Gallery):
             self.console_ask_items()
             # List everything and ask for confirmation
             questext = _('Recapitulation')
-            print("\n{0}:\n".format(questext))
+            print(("\n{0}:\n".format(questext)))
             self.console_items_list()
             questext = _('Is everything O.K.') + YN_N
-            ret = raw_input(questext)
+            ret = input(questext)
             if ret.lower() == LOC_Y:
                 ok = True
             else:
-                print(_('Check questions again and make corrections.'))
+                print((_('Check questions again and make corrections.')))
         self.make_directories()
         self.make_description_file()
         self.convert_pictures()
@@ -69,11 +69,11 @@ class UI(Gallery):
         """Ask parameters of source, destination, name and dimensions."""
         ok = False
         while not ok:
-            basedir_src = raw_input(_("Source base directory with picture directory(s)")+" [{0}]: ".format(self.basedir_src))
+            basedir_src = input(_("Source base directory with picture directory(s)")+" [{0}]: ".format(self.basedir_src))
             if basedir_src != "":
                 self.basedir_src = os.path.normpath(basedir_src)
             if not os.path.isdir(self.basedir_src):
-                print(_("Source base directory doesn't exists") + " ({0}).".format(self.basedir_src))
+                print((_("Source base directory doesn't exists") + " ({0}).".format(self.basedir_src)))
                 self.basedir_src = ""
                 ok = False
             else:
@@ -81,11 +81,11 @@ class UI(Gallery):
         ok = False
         while not ok:
             questext = _('Source subdirectory with pictures')
-            dir_src = raw_input("{0} [{1}]: ".format(questext, self.dir_src))
+            dir_src = input("{0} [{1}]: ".format(questext, self.dir_src))
             if dir_src != "":
                 self.dir_src = os.path.normpath(dir_src)
             if not os.path.isdir(self.basedir_src+"/"+self.dir_src):
-                print(_("Subdirectory doesn't exist") + " ({0}).".format(self.dir_src))
+                print((_("Subdirectory doesn't exist") + " ({0}).".format(self.dir_src)))
                 self.dir_src = ""
                 ok = False
             else:
@@ -93,11 +93,11 @@ class UI(Gallery):
         ok = False
         while not ok:
             questext = _('Destination base directory for galleries')
-            basedir_dst = raw_input("{0} [{1}]: ".format(questext, self.basedir_dst))
+            basedir_dst = input("{0} [{1}]: ".format(questext, self.basedir_dst))
             if basedir_dst != "":
                 self.basedir_dst = os.path.normpath(basedir_dst)
             if not os.path.isdir(self.basedir_dst):
-                print(_("Destination base directory doesn't exist") + " ({0}).".format(self.basedir_dst))
+                print((_("Destination base directory doesn't exist") + " ({0}).".format(self.basedir_dst)))
                 self.basedir_dst = ""
                 ok = False
             else:
@@ -105,11 +105,11 @@ class UI(Gallery):
         ok = False
         while not ok:
             questext = _('Destination subdirectory for the gallery')
-            dir_dst = raw_input("{0} [{1}]: ".format(questext, self.dir_dst))
+            dir_dst = input("{0} [{1}]: ".format(questext, self.dir_dst))
             if dir_dst != "":
                 self.dir_dst = os.path.normpath(dir_dst)
             if os.path.exists(self.basedir_dst+"/"+self.dir_dst):
-                print(_("Destination subdirectory exists already. Provide different name or delete the directory."))
+                print((_("Destination subdirectory exists already. Provide different name or delete the directory.")))
                 self.dir_dst = ""
                 ok = False
             else:
@@ -117,9 +117,9 @@ class UI(Gallery):
         ok = False
         while not ok:
             questext = _('Name for gallery (fee text)')
-            name = raw_input("{0} [{1}] ".format(questext, self.name))
+            name = input("{0} [{1}] ".format(questext, self.name))
             if name + self.name == "": 
-                print(_("Name is mandatory."))
+                print((_("Name is mandatory.")))
                 continue
             if name != "":
                 self.name = name
@@ -129,21 +129,21 @@ class UI(Gallery):
         else:
             nl = ""
         questext = _('Description (free text include html tags) - all in one line. Write "x" for erase existing text.')
-        description = raw_input("{0}:\n{1}{2}".format(questext, self.description, nl))
+        description = input("{0}:\n{1}{2}".format(questext, self.description, nl))
         if description != "":
             if description == "x":
                 self.description = ""
             else:
                 self.description = description
         questext = _('Required size for picture (dimension of longer side)')
-        pic_size = raw_input("{0} [{1}]: ".format(questext, self.pic_size))
+        pic_size = input("{0} [{1}]: ".format(questext, self.pic_size))
         if pic_size != "":
             self.pic_size = int(pic_size)
         questext = _('Required size for thumbnail (dimension of longer side)')
-        thm_size = raw_input("{0} [{1}]: ".format(questext, self.thm_size))
+        thm_size = input("{0} [{1}]: ".format(questext, self.thm_size))
         if thm_size != "":
             self.thm_size = int(thm_size)
-        num_from = raw_input(_("Number picures from") + " [{0}] ".format(self.num_from))
+        num_from = input(_("Number picures from") + " [{0}] ".format(self.num_from))
         try:
             num_from = int(num_from)
         except ValueError:
@@ -153,13 +153,13 @@ class UI(Gallery):
 
     def console_items_list(self):
         """List parameters of the gallery."""
-        print(_("Source directory") + ": {0}/{1}".format(self.basedir_src, self.dir_src))
-        print(_("Destination directory") + ": {0}/{1}".format(self.basedir_dst, self.dir_dst))
-        print(_("Name for the gallery") + ": {0}".format(self.name))
-        print(_("Gallery description") + ": {0}".format(self.description))
-        print(_("Picture size") + ": {0}".format(self.pic_size))
-        print(_("Thumbnail size") + ": {0}".format(self.thm_size))
-        print(_("Number picures from") + ": {0}".format(self.num_from))
+        print((_("Source directory") + ": {0}/{1}".format(self.basedir_src, self.dir_src)))
+        print((_("Destination directory") + ": {0}/{1}".format(self.basedir_dst, self.dir_dst)))
+        print((_("Name for the gallery") + ": {0}".format(self.name)))
+        print((_("Gallery description") + ": {0}".format(self.description)))
+        print((_("Picture size") + ": {0}".format(self.pic_size)))
+        print((_("Thumbnail size") + ": {0}".format(self.thm_size)))
+        print((_("Number picures from") + ": {0}".format(self.num_from)))
 
     def console_rotate_pics(self, pdir=None):
         """Console ui wrapper for rotate_pics method."""
@@ -170,10 +170,10 @@ class UI(Gallery):
             ok = False
             while not ok:
                 questext = _('Rotate pictures in directory')
-                ret = raw_input(" {0} [{1}]: ".format(questext, pdir))
+                ret = input(" {0} [{1}]: ".format(questext, pdir))
                 if ret != "":
                     if not os.path.isdir(ret):
-                        print(_("This is not a directory. Again please."))
+                        print((_("This is not a directory. Again please.")))
                         continue
                     pdir = ret
                 question = _("Pictures numbers and direction of rotation")
@@ -181,19 +181,19 @@ class UI(Gallery):
                     question += " [{0}]: ".format(pics)
                 else:
                     question += example + ": "
-                ret = raw_input(question)
+                ret = input(question)
                 if ret:
                     pics = ret
                 questext = _('Reassurance')
-                print("\n{0}\n".format(questext))
-                print(_("directory") + ": {0}".format(pdir))
-                print(_("pictures") + ": {0}".format(pics))
+                print(("\n{0}\n".format(questext)))
+                print((_("directory") + ": {0}".format(pdir)))
+                print((_("pictures") + ": {0}".format(pics)))
                 questext = _("O.K.") + YN_N
-                ret = raw_input(questext)
+                ret = input(questext)
                 if ret.lower() == LOC_Y:
                     ok = True
                     self.rotate_pics(pdir, pics)
-            ret = raw_input(_("Rotation finished. Is rotation O.K.") + YN_Y)
+            ret = input(_("Rotation finished. Is rotation O.K.") + YN_Y)
             if ret.lower() != LOC_N:
                 repeat = False
 

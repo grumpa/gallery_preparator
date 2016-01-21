@@ -48,7 +48,7 @@ class Gallery():
             os.mkdir(self.basedir_dst+"/"+self.dir_dst)
         except OSError as err:
             #TODO - impossible to use print - ui is unknown for us here
-            print "Nejde vytvořit adresář pro obrázky ({0}): {1} - {2}".format(self.dir_dst, err.errno, err.strerror)
+            print("Nejde vytvořit adresář pro obrázky ({0}): {1} - {2}".format(self.dir_dst, err.errno, err.strerror))
             sys.exit(1)
         else:
             os.mkdir(self.basedir_dst+"/"+self.dir_dst+"/thumbs")
@@ -76,7 +76,7 @@ class Gallery():
             # temporary rotation makes resizing simpler
             rotated = False
             if w < h:
-                im = im.rotate(90)
+                im = im.rotate(angle=90, expand=True)
                 rotated = True
             ratio = 1.0 * im.size[1] / im.size[0]
             # Don't resize picture, which is smaller then required size.
@@ -85,8 +85,8 @@ class Gallery():
             imt = im.copy()
             imt.thumbnail((self.thm_size, int(self.thm_size * ratio)))
             if rotated:
-                im = im.rotate(270)
-                imt = imt.rotate(270)
+                im = im.rotate(angle=270, expand=True)
+                imt = imt.rotate(angle=270, expand=True)
             # And save it finally
             im.save("%s/%s/%05d.jpg" % (self.basedir_dst, self.dir_dst, number))
             imt.save("%s/%s/thumbs/%05d.jpg" % (self.basedir_dst, self.dir_dst, number))
@@ -124,11 +124,11 @@ class Gallery():
                 pic_fn = "%05d.jpg" % int(pic_no)
                 pic_cur = Image.open("%s/%s" % (xdir, pic_fn))
                 if pic_rot.lower() == "l":
-                    pic_cur = pic_cur.rotate(90)
+                    pic_cur = pic_cur.rotate(angle=90, expand=True)
                 elif pic_rot.lower() == "u":
-                    pic_cur = pic_cur.rotate(180)
+                    pic_cur = pic_cur.rotate(angle=180, expand=True)
                 else:
-                    pic_cur = pic_cur.rotate(270)
+                    pic_cur = pic_cur.rotate(angle=270, expand=True)
                 pic_cur.save("%s/%s" % (xdir, pic_fn))
 
 if __name__ == "__main__":

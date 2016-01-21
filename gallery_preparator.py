@@ -23,4 +23,4 @@ app = UI()
 try:
     app.galeries()
 except KeyboardInterrupt:
-    print("\n\n" + _("Why so hurry? Goodbye.") + "\n")
+    print(("\n\n" + _("Why so hurry? Goodbye.") + "\n"))
