@@ -1,61 +1,68 @@
  gallery preparator
 ====================
 
-Program transforms picture folder into form usable for web gallery makers.
+Prepare photo gallery in bulk from source directory. Program converts photos
+to required size perserving ratio. It also generates thumbnails subdirectory.
 
- An Example
+Target is usable as source for photo galleries written for web or simply generated
+by javascript apps like http://galleria.io/ (it is what I really do).
+
+As last step in bulk transformation you can rotate pictures - in bulk also.
+
+Gallery_preparator also saves file "description.inc" in target directory. This file
+is PHP style config file containig name for the gallery, detailed description and id of 
+title photo.
+
+Program works in console and it asks for parameters (source dir, target dir, size
+of photos,...).
+
+
+i18n
+----
+
+Program uses gettext so it is translatable to different languages. This time it has
+base English and Czech translation (my mother language).
+
+
+Requirements
 ------------
 
-You have directory with serveral subirectories with pictures:
-```
-/path/to/basedir/subdir1/pic1.jpg
-/path/to/basedir/subdir1/pic2.jpg
-/path/to/basedir/subdir1/pic3.jpg
-/path/to/basedir/subdir2/pic1.jpg
-/path/to/basedir/subdir2/pic2.jpg
-/path/to/basedir/subdir2/pic3.jpg
-```
-And you want to generate directories with converted pictures
-into required size and with subidr with thumnails:
-```
-/path/to/dstbasedir/dstdir1/thumbs/00001.jpg
-/path/to/dstbasedir/dstdir1/thumbs/00002.jpg
-/path/to/dstbasedir/dstdir1/thumbs/00003.jpg
-/path/to/dstbasedir/dstdir1/00001.jpg
-/path/to/dstbasedir/dstdir1/00002.jpg
-/path/to/dstbasedir/dstdir1/00003.jpg
-/path/to/dstbasedir/dstdir1/description
-/path/t.... the same for next dir
-```
+- python 3 - tested with 3.4
+- pillow 3.1
+ 
 
-File 'description' contains importrant info about gallery:
-- gallery name
-- gallery description (possilby with html tags)
-- gallery picture = pic to show on title page with galleries
-- pics[] - array with descriptions to particular picutres (not implemened)
+How It Works
+------------
 
-And this is all for now. This application doesn't generate any html output.
-It really only transforms source directories into destination with thumbnails.
-
-Program works from Linux console and asks you for everything needed.
-
-
- Dependencies
---------------
-
-- python standar library :)
-- PIL
-
- current status
-----------------
-
-Program works well. Only some installator missing. 
-
-
- usage
--------
+In base directory you run:
 
     $ gallery_preparator_console.py
+
+First program asks for source directory. They are two questions:
+- base directory
+- particular subdirecory with photos
+
+The reason for doing it in two steps is that you may have more subdirs in base
+directory. Program remebers base direcory and in next turn you don't need to
+provide this path again and again if you have more subidrs with photos.
+
+Target is provided similar way: Base direcory where you galleries reside
+and subdirectory for one particular gallery.
+
+Then you provide name for your gallery, next description with possible
+html tags (all in one line - not very sophisticated way ;)
+
+Next you provide size of photos and size of thumbnails. Longer side only.
+The shorter size is calculated from ratio. Ratio is perserved.
+
+Then the program prints summary of parameters povided by you and you can
+confirm it or decline. In case of decline you are asked for all questions
+again. Previously provided values are offered as defaults - so you provide
+corrected values only.
+
+If everything is OK you confirm that. Then the conversion runs.
+
+The questionary looks like this:
 
     Source base directory with picture directory(s) []:
     Source subdirectory with pictures []:
@@ -66,39 +73,28 @@ Program works well. Only some installator missing.
     Required size for picture (dimension of longer side) []:
     Required size for thumbnail (dimension of longer side) [220]:
 
-Some terminology:
+Then you are asked if you want rotate some pictures. It is supposed you
+have possibility preview your gallery and you can see if position of
+photos is correct.
 
-- source base directory - directory where are subdirectories with pictures
-- source subdirectory - one particular subdirectory of base directory
-- The same is for destination directories. 
-
-The reason why the path is diveded is when you process serveral
-directories, the base directory remains the same and it is simpler
-to write or copy/paste subdirectory name only.
-
-__Rotating pictures__
-
-After generating pictures into destination directory program asks you if you want to
-rotate pictures. You probably have possibility to view generated
-pictures immediatelly after their generation. So if some of them
-are not rotated correctly, you may make it good now:
+Also rotations go in bulk. You provide nubers of pictures with one character
+saying rotation direction. For example: ***4l*** means photo No 4 rotate left.
+You can provide all symbols separated by space. If more adacent photos needs
+the same rotation, you can provide range this way: ***14-19r*** - means pictures
+nuber 14 to 19 all rotate right. Rotation 180 degrees has symbol ***u***.
 
     Rotate pictures? [y/N] ? y
     Rotate pictures in directory /tmp/gal2 [Y/n]: y
     Pictures numbers and direction of rotation (example: 6l 12r 16-23l 14r 35u):
 
-First program ensures if the directory where to rotate is the destination
-directory. Then asks for picture numbers and direction of rotation.
-Your input may look like this:
 
-8l 14r 16-21r 12u
+Future
+------
 
-It means that file 00008.jpg should be rotated left. Picture in file
-00014.jpg rotate right. You may insert range. So 16-21 means files
-00016.jpg, 00017.jpg, ..., 00021.jpg - all rotate right.
-12u means rotate 00012.jpg 180 degrees.
+I use this application by myself so I do some improvements from time to time.
+This version is enough for me but if you try it and get some idea what to
+make better, I'll be glad for your inspiration.
 
-
-Finally program asks you, if you want to process next directory - gallery.
-And so forth until the end...
+Surelly I want to rewrite structure of files and directories to standard python
+package and put in to pypi. Sometimes... ;)
 
