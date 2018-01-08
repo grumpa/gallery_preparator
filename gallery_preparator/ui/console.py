@@ -17,7 +17,7 @@ YN_Y = ' [{0}/{1}]? '.format(LOC_Y.upper(), LOC_N)
 YN_N = ' [{0}/{1}]? '.format(LOC_Y, LOC_N.upper())
 
 
-from core import Gallery
+from gallery_preparator.core import Gallery
 
 
 class UI(Gallery):
