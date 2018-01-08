@@ -100,6 +100,9 @@ class Gallery():
                 - pics from 00027.jpg to 00045.jpg rotate right
                 - pic 00018.jpg rotate 180
         """
+        # If no pictures supplied, no work to do.
+        if pics == '' or pics is None:
+            return
         pic_list = set()
         # is there some range input in picture list?
         for xpic in pics.split():
