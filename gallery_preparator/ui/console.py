@@ -18,6 +18,8 @@ LOC_N = locale.nl_langinfo(locale.NOEXPR)[2].lower()
 YN_Y = ' [{0}/{1}]? '.format(LOC_Y.upper(), LOC_N)
 YN_N = ' [{0}/{1}]? '.format(LOC_Y, LOC_N.upper())
 
+# maximum value for start numbering pics in a gallery
+MAX_NUM_FROM = 99000
 
 class UI(Gallery):
 
@@ -29,7 +31,7 @@ class UI(Gallery):
             questext = _('Rotate pictures') + YN_N
             ret = input(questext)
             if ret.lower() == LOC_Y:
-                self.console_rotate_pics(pdir="{0}/{1}".format(self.basedir_dst, self.dir_dst))
+                self.console_rotate_pics(pdir=os.path.join(self.basedir_dst, self.dir_dst))
             questext = _('Another gallery') + YN_Y
             ret = input(questext)
             if ret.lower() != LOC_N:
@@ -81,7 +83,7 @@ class UI(Gallery):
             dir_src = input("{0} [{1}]: ".format(questext, self.dir_src))
             if dir_src != "":
                 self.dir_src = os.path.normpath(dir_src)
-            if not os.path.isdir(self.basedir_src+"/"+self.dir_src):
+            if not os.path.isdir(os.path.join(self.basedir_src, self.dir_src)):
                 print((_("Subdirectory doesn't exist") + " ({0}).".format(self.dir_src)))
                 self.dir_src = ""
                 ok = False
@@ -105,7 +107,7 @@ class UI(Gallery):
             dir_dst = input("{0} [{1}]: ".format(questext, self.dir_dst))
             if dir_dst != "":
                 self.dir_dst = os.path.normpath(dir_dst)
-            if os.path.exists(self.basedir_dst+"/"+self.dir_dst):
+            if os.path.exists(os.path.join(self.basedir_dst, self.dir_dst)):
                 print((_("Destination subdirectory exists already. Provide different name or delete the directory.")))
                 self.dir_dst = ""
                 ok = False
@@ -145,13 +147,13 @@ class UI(Gallery):
             num_from = int(num_from)
         except ValueError:
             num_from = self.num_from
-        if num_from < 99900:
+        if num_from > 0 and num_from < MAX_NUM_FROM:
             self.num_from = num_from
 
     def console_items_list(self):
         """List parameters of the gallery."""
-        print((_("Source directory") + ": {0}/{1}".format(self.basedir_src, self.dir_src)))
-        print((_("Destination directory") + ": {0}/{1}".format(self.basedir_dst, self.dir_dst)))
+        print((_("Source directory") + ": {0}".format(os.path.join(self.basedir_src, self.dir_src))))
+        print((_("Destination directory") + ": {0}".format(os.path.join(self.basedir_dst, self.dir_dst))))
         print((_("Name for the gallery") + ": {0}".format(self.name)))
         print((_("Gallery description") + ": {0}".format(self.description)))
         print((_("Picture size") + ": {0}".format(self.pic_size)))
