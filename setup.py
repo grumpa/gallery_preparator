@@ -8,7 +8,7 @@ with open(path.join(here, 'README.md'), encoding='utf-8') as f:
 
 setup(
     name='gallery-preparator',
-    version='0.4.1',
+    version='0.4.2',
     description='Web gallery preparation helper program.',
     long_description=long_description,
     url='https://github.com/grumpa/gallery_preparator',
@@ -16,7 +16,7 @@ setup(
     author_email='v.matys@seznam.cz',
     license='BSD 3',
     classifiers=[
-        'Development Status :: 3 - Alpha',
+        'Development Status :: 4 - Beta',
         'Environment :: Console',
         'Intended Audience :: End Users/Desktop',
         'License :: OSI Approved :: BSD License',
