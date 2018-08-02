@@ -20,8 +20,6 @@ YN_N = ' [{0}/{1}]? '.format(LOC_Y, LOC_N.upper())
 
 
 class UI(Gallery):
-    def __init__(self):
-        Gallery.__init__(self)
 
     def galeries(self):
         """Main loop for galeries"""
