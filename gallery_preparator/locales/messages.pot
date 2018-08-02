@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-01-21 14:33+0100\n"
+"POT-Creation-Date: 2018-08-02 16:56+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: gallery_preparator.py:26
+#: gallery_preparator.py:29
 msgid "Why so hurry? Goodbye."
 msgstr ""
 
@@ -157,6 +157,10 @@ msgstr ""
 msgid "O.K."
 msgstr ""
 
-#: ui/console.py:196
+#: ui/console.py:197
+msgid "These picture numbers were not found"
+msgstr ""
+
+#: ui/console.py:198
 msgid "Rotation finished. Is rotation O.K."
 msgstr ""

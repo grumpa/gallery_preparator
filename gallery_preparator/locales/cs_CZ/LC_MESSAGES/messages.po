@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Gallery Preparator, Alpha\n"
+"Project-Id-Version: Gallery Preparator, Beta\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-10-12 16:01+0200\n"
+"POT-Creation-Date: 2018-08-02 16:56+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Viktor Matys <v.matys@seznam.cz>\n"
 "Language-Team: cs <v.matys@seznam.cz>\n"
@@ -10,12 +10,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-SourceCharset: utf-8\n"
-"X-Poedit-Basepath: /srv/web/pomucky/py_galery\n"
-"X-Generator: Poedit 1.6.10\n"
-"X-Poedit-SearchPath-0: gallery_preparator\n"
 
-#: gallery_preparator.py:26
+#: gallery_preparator.py:29
 msgid "Why so hurry? Goodbye."
 msgstr "Proč ten spěch? Sbohem."
 
@@ -158,6 +154,10 @@ msgstr "obrázky"
 msgid "O.K."
 msgstr "O.K."
 
-#: ui/console.py:196
+#: ui/console.py:197
+msgid "These picture numbers were not found"
+msgstr "Tato čísla obrázků nebyla nalezena"
+
+#: ui/console.py:198
 msgid "Rotation finished. Is rotation O.K."
 msgstr "Otáčení dokončeno. Je vše otočeno správně"
