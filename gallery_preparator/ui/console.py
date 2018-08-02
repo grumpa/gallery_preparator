@@ -21,6 +21,7 @@ YN_N = ' [{0}/{1}]? '.format(LOC_Y, LOC_N.upper())
 # maximum value for start numbering pics in a gallery
 MAX_NUM_FROM = 99000
 
+
 class UI(Gallery):
 
     def galeries(self):
@@ -147,7 +148,7 @@ class UI(Gallery):
             num_from = int(num_from)
         except ValueError:
             num_from = self.num_from
-        if num_from > 0 and num_from < MAX_NUM_FROM:
+        if 0 < num_from <= MAX_NUM_FROM:
             self.num_from = num_from
 
     def console_items_list(self):
