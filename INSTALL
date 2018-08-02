@@ -1,6 +1,4 @@
  gallery preparator - installation
 -----------------------------------
 
-I want to make installation automatic with Python tools. Now you simply
-copy directory where you need and use it.
-
+Installation instructions are in README.md.
