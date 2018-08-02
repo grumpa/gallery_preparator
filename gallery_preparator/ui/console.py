@@ -10,7 +10,7 @@ from gallery_preparator.core import Gallery
 
 locale.setlocale(locale.LC_ALL, '')
 _ = gettext.gettext
-gettext.bindtextdomain('messages', 'locales')
+gettext.bindtextdomain('messages', 'gallery_preparator/locales')
 # constants for local yes/no
 LOC_Y = locale.nl_langinfo(locale.YESEXPR)[2].lower()
 LOC_N = locale.nl_langinfo(locale.NOEXPR)[2].lower()
