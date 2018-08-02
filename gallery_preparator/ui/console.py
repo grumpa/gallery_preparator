@@ -194,7 +194,7 @@ class UI(Gallery):
                     ok = True
                     not_found_pics = self.rotate_pics(pdir, pics)
                     if len(not_found_pics) > 0:
-                        print(_("These pictures numbers were not found: {0}").format(not_found_pics))
+                        print(_("These picture numbers were not found") + ": {0}".format(not_found_pics))
             ret = input(_("Rotation finished. Is rotation O.K.") + YN_Y)
             if ret.lower() != LOC_N:
                 repeat = False
