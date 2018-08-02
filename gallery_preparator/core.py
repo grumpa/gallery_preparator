@@ -13,7 +13,7 @@ from PIL import Image, ImageFile
 ImageFile.LOAD_TRUNCATED_IMAGES = True
 
 
-class Gallery():
+class Gallery:
     """Gallery source and destination."""
 
     def __init__(self,
