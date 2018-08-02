@@ -5,6 +5,8 @@ import os.path
 import gettext
 import locale
 import os.path
+from gallery_preparator.core import Gallery
+
 
 locale.setlocale(locale.LC_ALL, '')
 _ = gettext.gettext
@@ -15,9 +17,6 @@ LOC_N = locale.nl_langinfo(locale.NOEXPR)[2].lower()
 # strings for local question [Y/n], [y/N]
 YN_Y = ' [{0}/{1}]? '.format(LOC_Y.upper(), LOC_N)
 YN_N = ' [{0}/{1}]? '.format(LOC_Y, LOC_N.upper())
-
-
-from gallery_preparator.core import Gallery
 
 
 class UI(Gallery):
