@@ -102,6 +102,7 @@ class Gallery:
                 - pic 00006.jpg rotate left
                 - pics from 00027.jpg to 00045.jpg rotate right
                 - pic 00018.jpg rotate 180
+        returns set with numbers of not found pictures
         """
         # If no pictures supplied, no work to do.
         if pics == '' or pics is None:
@@ -122,13 +123,18 @@ class Gallery:
                     pic_list.add(str(num)+rot)
             else:
                 pic_list.add(xpic)
-            # finally, rotate
+        # finally, rotate
+        not_found_pics = set()
         for xdir in (pdir, pdir+"/thumbs"):
             for xpic in pic_list:
                 pic_no = xpic[:-1]
                 pic_rot = xpic[-1:]
                 pic_fn = "%05d.jpg" % int(pic_no)
-                pic_cur = Image.open("%s/%s" % (xdir, pic_fn))
+                try:
+                    pic_cur = Image.open("%s/%s" % (xdir, pic_fn))
+                except FileNotFoundError:
+                    not_found_pics.add(pic_no)
+                    continue
                 if pic_rot.lower() == "l":
                     pic_cur = pic_cur.rotate(angle=90, expand=True)
                 elif pic_rot.lower() == "u":
@@ -136,6 +142,7 @@ class Gallery:
                 else:
                     pic_cur = pic_cur.rotate(angle=270, expand=True)
                 pic_cur.save("%s/%s" % (xdir, pic_fn))
+        return not_found_pics
 
 
 if __name__ == "__main__":
