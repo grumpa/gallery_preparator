@@ -1,20 +1,26 @@
  gallery preparator
 ====================
 
-Prepare photo gallery in bulk from source directory. Program converts photos
-to required size perserving ratio. It also generates thumbnails subdirectory.
+App creates photo galleries in bulk.
 
-Target is usable as source for photo galleries written for web or simply generated
-by javascript apps like http://galleria.io/ (it is what I really do).
+Source directory contains serveral subdirectories with photos. 
 
-As last step in bulk transformation you can rotate pictures - in bulk also.
+Program converts photos to destination direcories in required size perserving ratio.
+
+It also generates thumbnails subdirectory.
+
+After transformation of gallery you can rotate pictures - in bulk also.
 
 Gallery_preparator also saves file "description.inc" in target directory. This file
 is PHP style config file containig name for the gallery, detailed description and id of 
 title photo.
 
+Target is usable as source for photo galleries written for web or simply generated
+by javascript apps like http://galleria.io/ (It is what I use).
+
 Program works in console and it asks for parameters (source dir, target dir, size
-of photos,...).
+of photos,...). You can also use its "core" module separatelly for bulk conversion
+in your program environment.
 
 
 i18n
@@ -27,16 +33,33 @@ base English and Czech translation (my mother language).
 Requirements
 ------------
 
-- python 3 - tested with 3.4
-- pillow 3.1
+- python 3 - tested with 3.4, 3.5
+- pillow
  
 
-How It Works
+Installation
 ------------
 
-In base directory you run:
+Currently there is not pypi binary. Use source installation:
+- create python virtual environment
+- activate it
+- download this repository
 
-    $ gallery_preparator_console.py
+run (virtual env activated):
+
+    $ python setup.py build
+    $ python setup.py install
+
+
+Usage
+-----
+
+Then you can run this app (virtual env activated):
+
+    $ gallery_preparator
+
+How Does It Work
+----------------
 
 First program asks for source directory. They are two questions:
 - base directory
