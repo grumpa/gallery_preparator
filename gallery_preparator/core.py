@@ -49,7 +49,7 @@ class Gallery:
         try:
             os.mkdir(self.basedir_dst+"/"+self.dir_dst)
         except OSError as err:
-            #TODO - impossible to use print - ui is unknown for us here
+            # TODO - impossible to use print - ui is unknown for us here
             print("Nejde vytvořit adresář pro obrázky ({0}): {1} - {2}".format(self.dir_dst, err.errno, err.strerror))
             sys.exit(1)
         else:
@@ -57,7 +57,7 @@ class Gallery:
 
     def make_description_file(self):
         """Make file describing gallery"""
-        df = open("%s/%s/description.inc" % (self.basedir_dst, self.dir_dst),'w')
+        df = open("%s/%s/description.inc" % (self.basedir_dst, self.dir_dst), 'w')
         df.write("<?php\n")
         df.write("$gallery_name = \"%s\";\n" % self.name)
         df.write("$gallery_description = \"%s\";\n" % self.description)
@@ -93,7 +93,7 @@ class Gallery:
             # And save it finally
             im.save("%s/%s/%05d.jpg" % (self.basedir_dst, self.dir_dst, number))
             imt.save("%s/%s/thumbs/%05d.jpg" % (self.basedir_dst, self.dir_dst, number))
-            number = number +1
+            number = number + 1
 
     def rotate_pics(self, pdir, pics):
         """
@@ -137,6 +137,6 @@ class Gallery:
                     pic_cur = pic_cur.rotate(angle=270, expand=True)
                 pic_cur.save("%s/%s" % (xdir, pic_fn))
 
+
 if __name__ == "__main__":
     g = Gallery()
-
