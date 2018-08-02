@@ -14,7 +14,7 @@ ImageFile.LOAD_TRUNCATED_IMAGES = True
 
 
 class Gallery():
-    "Gallery source and destination."
+    """Gallery source and destination."""
 
     def __init__(self,
                  basedir_src="",
@@ -45,7 +45,7 @@ class Gallery():
         self.num_from = int(num_from)
 
     def make_directories(self):
-        "Make directories for picture gallery and thumbs"
+        """Make directories for picture gallery and thumbs"""
         try:
             os.mkdir(self.basedir_dst+"/"+self.dir_dst)
         except OSError as err:
@@ -56,6 +56,7 @@ class Gallery():
             os.mkdir(self.basedir_dst+"/"+self.dir_dst+"/thumbs")
 
     def make_description_file(self):
+        """Make file describing gallery"""
         df = open("%s/%s/description.inc" % (self.basedir_dst, self.dir_dst),'w')
         df.write("<?php\n")
         df.write("$gallery_name = \"%s\";\n" % self.name)
@@ -66,7 +67,7 @@ class Gallery():
         df.close()
 
     def convert_pictures(self):
-        "Reads pictures from source directory and makes required ones into destination."
+        """Reads pictures from source directory and makes required ones into destination."""
         number = self.num_from
         for item in os.listdir("%s/%s" % (self.basedir_src, self.dir_src)):
             try:
