@@ -191,7 +191,9 @@ class UI(Gallery):
                 ret = input(questext)
                 if ret.lower() == LOC_Y:
                     ok = True
-                    self.rotate_pics(pdir, pics)
+                    not_found_pics = self.rotate_pics(pdir, pics)
+                    if len(not_found_pics) > 0:
+                        print(_("These pictures numbers were not found: {0}").format(not_found_pics))
             ret = input(_("Rotation finished. Is rotation O.K.") + YN_Y)
             if ret.lower() != LOC_N:
                 repeat = False
