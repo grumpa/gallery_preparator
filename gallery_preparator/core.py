@@ -43,10 +43,10 @@ class Gallery:
         """
         self.basedir_src = basedir_src
         self.dir_src = dir_src
-        self.src_path = os.path.join(self.basedir_src, self.dir_src)
+        self.src_path = os.path.join(basedir_src, dir_src)
         self.basedir_dst = basedir_dst
         self.dir_dst = dir_dst
-        self.dst_path = os.path.join(self.basedir_dst, self.dir_dst)
+        self.dst_path = os.path.join(basedir_dst, dir_dst)
         self.name = name
         self.description = description
         self.pic_size = int(pic_size)
