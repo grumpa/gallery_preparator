@@ -8,7 +8,7 @@ with open(path.join(here, 'README.md'), encoding='utf-8') as f:
 
 setup(
     name='gallery-preparator',
-    version='0.4.3',
+    version='0.4.4',
     description='Web gallery preparation helper program.',
     long_description=long_description,
     url='https://github.com/grumpa/gallery_preparator',
