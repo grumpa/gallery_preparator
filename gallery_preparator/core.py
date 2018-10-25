@@ -48,14 +48,8 @@ class Gallery:
 
     def make_directories(self):
         """Make directories for picture gallery and thumbs"""
-        try:
-            os.mkdir(self.dst_path)
-        except OSError as err:
-            # TODO - impossible to use print - ui is unknown for us here
-            print("Nejde vytvořit adresář pro obrázky ({0}): {1} - {2}".format(self.dir_dst, err.errno, err.strerror))
-            sys.exit(1)
-        else:
-            os.mkdir(os.path.join(self.dst_path, "thumbs"))
+        os.mkdir(self.dst_path)
+        os.mkdir(os.path.join(self.dst_path, "thumbs"))
 
     def make_description_file(self):
         """Make file describing gallery"""
