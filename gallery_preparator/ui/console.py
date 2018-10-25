@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
+import sys
 import os.path
 import gettext
 import locale
@@ -11,9 +12,14 @@ from gallery_preparator.core import Gallery
 locale.setlocale(locale.LC_ALL, '')
 _ = gettext.gettext
 gettext.bindtextdomain('messages', 'gallery_preparator/locales')
+PY_VER = sys.version_info[0]*10 + sys.version_info[1]
 # constants for local yes/no
-LOC_Y = locale.nl_langinfo(locale.YESEXPR)[2].lower()
-LOC_N = locale.nl_langinfo(locale.NOEXPR)[2].lower()
+if PY_VER < 35:
+    LOC_Y = locale.nl_langinfo(locale.YESEXPR)[2].lower()
+    LOC_N = locale.nl_langinfo(locale.NOEXPR)[2].lower()
+else:
+    LOC_Y = locale.nl_langinfo(locale.YESEXPR)[4].lower()
+    LOC_N = locale.nl_langinfo(locale.NOEXPR)[4].lower()
 # strings for local question [Y/n], [y/N]
 YN_Y = ' [{0}/{1}]? '.format(LOC_Y.upper(), LOC_N)
 YN_N = ' [{0}/{1}]? '.format(LOC_Y, LOC_N.upper())
