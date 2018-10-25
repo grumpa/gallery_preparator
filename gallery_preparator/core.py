@@ -5,7 +5,6 @@
 An executing class for gallery preparator independent on user interface.
 """
 
-import sys
 import os
 import os.path
 from PIL import Image, ImageFile
