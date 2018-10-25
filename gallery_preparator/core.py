@@ -91,7 +91,8 @@ class Gallery:
             imt.save("{}/thumbs/{:05d}.jpg".format(self.dst_path, number))
             number = number + 1
 
-    def rotate_pics(self, pdir, pics):
+    @staticmethod
+    def rotate_pics(pdir, pics):
         """
         Rotate pictures pics in directory pidr
         pics - string as "6l 27-45r 18u" i.e.:
