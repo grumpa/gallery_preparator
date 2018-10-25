@@ -36,8 +36,10 @@ class Gallery:
         """
         self.basedir_src = basedir_src
         self.dir_src = dir_src
+        self.src_path = os.path.join(self.basedir_src, self.dir_src)
         self.basedir_dst = basedir_dst
         self.dir_dst = dir_dst
+        self.dst_path = os.path.join(self.basedir_dst, self.dir_dst)
         self.name = name
         self.description = description
         self.pic_size = int(pic_size)
@@ -47,17 +49,17 @@ class Gallery:
     def make_directories(self):
         """Make directories for picture gallery and thumbs"""
         try:
-            os.mkdir(self.basedir_dst+"/"+self.dir_dst)
+            os.mkdir(self.dst_path)
         except OSError as err:
             # TODO - impossible to use print - ui is unknown for us here
             print("Nejde vytvořit adresář pro obrázky ({0}): {1} - {2}".format(self.dir_dst, err.errno, err.strerror))
             sys.exit(1)
         else:
-            os.mkdir(self.basedir_dst+"/"+self.dir_dst+"/thumbs")
+            os.mkdir(os.path.join(self.dst_path, "thumbs"))
 
     def make_description_file(self):
         """Make file describing gallery"""
-        df = open("%s/%s/description.inc" % (self.basedir_dst, self.dir_dst), 'w')
+        df = open("{}/description.inc".format(self.dst_path), 'w')
         df.write("<?php\n")
         df.write("$gallery_name = \"%s\";\n" % self.name)
         df.write("$gallery_description = \"%s\";\n" % self.description)
@@ -69,9 +71,9 @@ class Gallery:
     def convert_pictures(self):
         """Reads pictures from source directory and makes required ones into destination."""
         number = self.num_from
-        for item in os.listdir("%s/%s" % (self.basedir_src, self.dir_src)):
+        for item in os.listdir(self.src_path):
             try:
-                im = Image.open("%s/%s/%s" % (self.basedir_src, self.dir_src, item))
+                im = Image.open(os.path.join(self.src_path, item))
             except IOError:
                 # It is not a picture file
                 continue
@@ -91,8 +93,8 @@ class Gallery:
                 im = im.rotate(angle=270, expand=True)
                 imt = imt.rotate(angle=270, expand=True)
             # And save it finally
-            im.save("%s/%s/%05d.jpg" % (self.basedir_dst, self.dir_dst, number))
-            imt.save("%s/%s/thumbs/%05d.jpg" % (self.basedir_dst, self.dir_dst, number))
+            im.save("{}/{:05d}.jpg".format(self.dst_path, number))
+            imt.save("{}/thumbs/{:05d}.jpg".format(self.dst_path, number))
             number = number + 1
 
     def rotate_pics(self, pdir, pics):
