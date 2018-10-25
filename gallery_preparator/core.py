@@ -11,6 +11,14 @@ from PIL import Image, ImageFile
 
 ImageFile.LOAD_TRUNCATED_IMAGES = True
 
+description_template = """<?php
+$gallery_name = "{name}";
+$gallery_description = "{descr}";
+$gallery_pic = "{gall_pic:05d}.jpg";
+$pics[] = "";
+?>
+"""
+
 
 class Gallery:
     """Gallery source and destination."""
@@ -53,12 +61,7 @@ class Gallery:
     def make_description_file(self):
         """Make file describing gallery"""
         df = open("{}/description.inc".format(self.dst_path), 'w')
-        df.write("<?php\n")
-        df.write("$gallery_name = \"%s\";\n" % self.name)
-        df.write("$gallery_description = \"%s\";\n" % self.description)
-        df.write("$gallery_pic = \"{0:0>5d}.jpg\";\n".format(self.num_from))
-        df.write("$pics[] = \"\";\n")
-        df.write("?>\n")
+        df.write(description_template.format(name=self.name, descr=self.description, gall_pic=self.num_from))
         df.close()
 
     def convert_pictures(self):
