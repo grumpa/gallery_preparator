@@ -14,7 +14,7 @@ _ = gettext.gettext
 gettext.bindtextdomain('messages', 'gallery_preparator/locales')
 PY_VER = sys.version_info[0]*10 + sys.version_info[1]
 # constants for local yes/no
-if PY_VER < 35:
+if PY_VER <= 35:
     LOC_Y = locale.nl_langinfo(locale.YESEXPR)[2].lower()
     LOC_N = locale.nl_langinfo(locale.NOEXPR)[2].lower()
 else:
