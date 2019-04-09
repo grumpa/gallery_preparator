@@ -77,7 +77,7 @@ class UI(Gallery):
         while not ok:
             basedir_src = input(_("Source base directory with picture directory(s)")+" [{0}]: ".format(self.basedir_src))
             if basedir_src != "":
-                self.basedir_src = os.path.normpath(basedir_src)
+                self.basedir_src = os.path.expanduser(os.path.normpath(basedir_src))
             if not os.path.isdir(self.basedir_src):
                 print((_("Source base directory doesn't exists") + " ({0}).".format(self.basedir_src)))
                 self.basedir_src = ""
