@@ -1,2 +1,2 @@
 Pillow
-setuptools
+setuptools>=46.0
