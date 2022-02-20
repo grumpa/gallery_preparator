@@ -1,10 +1,6 @@
 *.py[cod]
-Gallery Preparator/
 build/
 dist/
 gallery_preparator.egg-info/
-pyvirt-activate-3.5
-MANIFEST
 
-*.nja
 .idea
